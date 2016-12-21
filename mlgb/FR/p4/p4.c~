@@ -1,0 +1,42 @@
+#include<cstdio>
+#include<cstdlib>
+#include"p4.h"
+
+int main()
+{
+  Points<int> A(20);
+  FILE *fp=fopen("landscape.txt","r");
+  if(!fp)
+  {
+    perror("error for open \n");
+    exit(10);
+  }
+
+  int a,b;
+  int index;//for print the array
+  for (int i=0; i<20;i++)
+  {
+    if (fscanf(fp, "%d %d",&a,&b)==2)
+    {
+      A.x[i]=a;
+      A.y[i]=b;
+      index++;
+    }
+    
+  }
+
+  if(fclose(fp))
+  {
+    perror("error for closing \n");
+    exit(10);
+  }
+
+  for(int i=0; i<index;i++)
+  {
+    printf("%d %d", A.x[i],A.y[i]);
+  }
+
+
+
+
+}

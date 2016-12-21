@@ -1,0 +1,15 @@
+<html>
+<head>
+</head>
+<body onLoad="document.relay.submit()">
+<form method=post action="https://weblogin.srv.ualberta.ca/" name=relay>
+<input type=hidden name=pubcookie_g_req value="b25lPWVjbGFzcy5zcnYudWFsYmVydGEuY2EmdHdvPWVjbGFzc3Byb2QmdGhyZWU9MSZmb3VyPWE1YSZmaXZlPUdFVCZzaXg9ZWNsYXNzLnNydi51YWxiZXJ0YS5jYSZzZXZlbj1MMnh2WjJsdUwybHVaR1Y0TG5Cb2NBPT0mZWlnaHQ9Jmhvc3RuYW1lPWVjbGFzcy1wcm9kdWN0aW9uLWFwcC0yLm5vdmFsb2NhbCZuaW5lPTEmZmlsZT0mcmVmZXJlcj0obnVsbCkmc2Vzc19yZT0wJnByZV9zZXNzX3Rvaz0xMDgxODMwMzk1JmZsYWc9MA==">
+<input type=hidden name=post_stuff value="">
+<input type=hidden name=relay_url value="https://eclass.srv.ualberta.ca/PubCookie.reply">
+<noscript>
+<p align=center>You do not have Javascript turned on,   please click the button to continue.
+<p align=center>
+<input type=submit name=go value=Continue>
+</noscript>
+</form>
+</html>

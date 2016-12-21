@@ -1,0 +1,28 @@
+#include<cstdio>
+#include<cstdlib>
+#include<stdio.h>
+int main(int argc,string*argv[])
+{
+  // int N=10000;
+  FILE *fp=fopen("test","w");
+
+  if (!fp)
+  {
+    perror("encountered fopen error");exit(10);
+  }
+
+  
+  {
+    
+    if(fprintf(fp,argv[1])<0)
+    {
+      perror("encountered fprintf error");exit(10);
+    }
+  }
+
+  if (fclose(fp))
+  {
+    perror("encountered fclose error"),exit(10);
+  }
+  return 0;
+}

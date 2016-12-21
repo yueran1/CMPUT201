@@ -1,0 +1,35 @@
+/*
+    == Your Name == : Sun Yue Ran
+   [3  marks ] Coding Style
+   [2  marks ] Correct Compilation with no warnings
+   [10 marks ] Functionality 
+ */
+#include<string>
+#include<iostream>
+using namespace std;
+
+
+int main()
+{
+  string s;
+  string result;
+  cin>>s;
+  for(unsigned int i=0; i<s.size();i++)
+  {
+    if (s[i]>='a' && s[i]<='z')
+    {
+      result =result +(char)((s[i]+(('u'-'a')%10)+'0'));
+    }
+    else if (s[i]>='A' && s[i]<='Z')
+    {
+      result =result +(char)((s[i]+('U'-'A')));
+    }
+
+    else
+    {
+      result =result+s[i];
+    }
+    
+  }
+  cout <<result<<endl;
+}

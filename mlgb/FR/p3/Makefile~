@@ -1,0 +1,8 @@
+CC:=g++
+CCOPTS:= -Wall -Wextra -Wconversion -o
+
+
+p3: p3.o Points.o
+	g++ -o p3 p3.o Points.o
+%.o : %.c
+	$(CC) $(CCOPTS)$@ -c $<

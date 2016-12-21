@@ -1,0 +1,50 @@
+#include<stdio.h>
+
+bool is_prime (const int a)
+{
+  bool prime=true;
+  for (int i=2;i<=a-1;i++)
+  {
+    if (a%i==0)
+    {
+      prime =false;
+    }
+  }
+
+  return prime;
+}
+
+
+int main()
+{
+  // const int c=(int)*argv[0];
+  //printf("c is %d \n",c);
+  char e='5';
+  int f= (int)e;
+  printf("value of int f is %d",f);
+
+  int c;
+  if (scanf("%d", &c)!=1)
+  {
+    return 1;
+  }
+  int a=2;
+  /*if (!feof(stdin))
+  {
+    printf("erroe happened \n");
+    }*/
+  for(;;)
+  {
+    if (a>c && is_prime(a))
+    {
+      break;
+    }
+    a++;
+    printf("now a is %d \n",a);
+
+
+  }
+
+  printf("the value of a is %d  the value of c is %d\n",a,c);
+
+}

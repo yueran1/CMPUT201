@@ -1,0 +1,17 @@
+#include"points.h"
+
+template<typename T>
+Points<T>:: Points(int a)
+{
+  num=a;
+  x=new T[num];
+  y=new T[num];
+}
+
+template <typename T>
+Points<T>:: ~Points()
+{
+
+  delete [] x;
+  delete [] y;
+}

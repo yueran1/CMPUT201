@@ -1,0 +1,11 @@
+# include<stdio.h>
+# include"decimal.h"
+# include<assert.h>
+
+decimal:: decimal(int a)
+{
+  assert(a>0);
+  
+  elems=new int[a];
+  
+}

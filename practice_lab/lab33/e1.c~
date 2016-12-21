@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<string.h>
+
+int main ()//(int argc , char*argv[])
+{
+  /* if(argc!= 2 || strlen(argv[1]!=1))
+  {
+    printf("invalidarguments \n");
+    return 1;
+  }
+  char*firstarg=argv[1];
+  // int c=firstarg[0];
+  
+  // */
+  int location=0;
+  int size=10;
+  int count=0;
+  char input[size];
+  char *p=&input;
+
+  // if we do not know the max size of input
+  
+  
+  while(true)
+  {
+    int newint=scanf("%s",input);
+    if (newint==EOF)
+    {
+      break;
+    }
+
+    else
+    {
+      count++;
+    }
+    if (location==size-1)
+    {
+      size=size+10;
+      char*B= new char[size];
+      p[location]='\0';
+      strcpy(B,p);
+      delete p;
+      p=B;
+        
+    }
+  }
+  printf("We have seen  there are  %d integers \n", count);
+ 
+
+}

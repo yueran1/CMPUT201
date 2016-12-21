@@ -1,0 +1,99 @@
+/*
+    == Your Name == :Sun Yue Ran
+   [3  marks ] Coding Style
+   [2  marks ] Correct Compilation with no warnings
+   [10 marks ] Functionality 
+ */
+
+#include<cstdio>
+#include<cstdlib>
+#include <stdio.h>
+#include <iostream>
+#include <math.h>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+
+struct Point
+{
+  int x;
+  int y;
+};
+
+
+
+/*void distance(Point A, int index)
+{
+  struct point O [2];
+  O.x=A[0].x;
+  O.y=A[0].y;
+  
+  int d=0;
+  int smallest_d=10000;
+  for (int i=1;i<index;i++)
+  {
+    d=sqrt((double)(A[i].x-O.x)*(A[i].x-O.x)+(A[i].y-O.y)*(A[i].y-O.y));
+    if (d<smallest_d)
+    {
+      smallest_d=d;
+    }
+  }
+  }*/
+
+
+
+
+int main()
+{
+  struct Point p[20];
+  FILE *fp=fopen("landscape.txt","r");
+  if (!fp)
+  {
+    perror("file open failed \n");
+    exit (10);
+  }
+
+  int a,b;
+  int index=0;
+  for (int i=0; i<20;i++)
+  {
+    if(fscanf(fp,"%d %d \n",&a,&b)==2)
+    {
+      p[i].x=a;
+      p[i].y=b;
+      index++;
+    }
+    
+  }
+
+  /*for (int i=0; i<index;i++)
+  {
+    printf("%d %d \n", p[i].x,p[i].y);
+    }*/
+
+  //distance(p,index);
+  struct Point O ;
+  O.x=p[0].x;
+  O.y=p[0].y;
+  //struct Point B[4];
+  int d=0;
+  int smallest_d=0;
+
+  int d=10;
+  int e=11;
+  int f=5;
+  int g=8;
+  printf("%d %d\n", d,e);
+  printf("%d %d \n",f,g);
+  for (int i=1;i<index;i++)
+  {
+    d=sqrt((double)(p[i].x-O.x)*(p[i].x-O.x)+(p[i].y-O.y)*(p[i].y-O.y));
+    if (d>smallest_d)
+    {
+      smallest_d=d;
+      printf("%d %d \n", p[i].x,p[i].y);
+    }
+    }
+  // printf("%d \n", index);
+}

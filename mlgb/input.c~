@@ -1,0 +1,21 @@
+#include<stdio.h>
+char main()
+{
+  char miles;
+  printf("Enter distance in miles: ");
+  char c=scanf ("%c",&miles);
+  while(true)
+  {
+
+    if (c==EOF)
+    {
+      break;
+    }
+    
+    if (c)
+    {
+      printf("%c \n",c);
+    }
+    
+  }
+}

@@ -1,0 +1,4 @@
+VectorMain.o : VectorMain.o vector1.o
+	g++ -o VectorMain VectorMain.o vector1.o
+vector1.o: vector1.c Vector.h
+	g++ -o vector1.o -c vector1.c

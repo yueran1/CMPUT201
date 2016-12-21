@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <string.h>
+#include <assert.h>
+
+
+#include "util.hpp"
+
+#include "hashtable.hpp"
+
+// hashtable.cpp
+//
+// Fill in the functions described in hashtable.hpp
+// Constructor.  Takes an unsigned int newSize, the number of lists
+//   to allocate for the hash table.
+//
+HashTable:: HashTable(unsigned int newSize)
+{
+  tableSize=newSize;
+  table=new SList[ tableSize];
+}
+
+HashTable:: ~HashTable()
+{
+  delete[] table;
+}
+
+// add. Takes a const char * called word: a word to add to the hash table,
+//   but check for a duplicate first: we only store unique words.
+//   Returns nothing.
+void HashTable::add(const char* word)
+{
+  unsigned int hash= hashString( word, tableSize );
+  table[hash].add_unique(word);
+}
+
+// check.  Takes a const char * called word.  Checks to see if the
+//   word already exists in the hash table.  If it does, then return 1;
+//   if not, then return 0.
+int HashTable::check(const char* word)
+{
+  unsigned int hash=hashString(word,tableSize);
+  Node* result=table[hash].find(word);
+  if (result==NULL)
+  {
+    return 0;
+  }
+  else
+  {
+    return 1;
+  }
+}
+
+// getNumEntries.  Takes nothing, returns an unsigned int.
+//   Returns the number of words stored in the hash table.
+//
+int HashTable::getNumEntries()
+{
+  unsigned int total=0;
+  for (int i=0;i<tableSize; i++)
+  {
+    total= total+ table[i].size();
+  }
+  return total;
+}
+
+// getStats.  Takes pointers to two unsigned ints, "shortest" and "longest".
+//   Looks through the lists in the hash table, and fills these pointers
+//   with the lengths of the smallest and longest lists.
+void HashTable::getStats(unsigned int *shortest, unsigned int *longest)
+{
+  *shortest=table[0].size();
+  *longest=table[0].size();
+  for (unsigned int i=1; i<tableSize; i++)
+  {
+    if (table[i].size()<*shortest)
+    {
+      *shortest=table[i].size();
+    }
+    if (table[i].size()>*longest)
+    {
+      *longest=table[i].size();
+    }
+  }
+
+  
+}
